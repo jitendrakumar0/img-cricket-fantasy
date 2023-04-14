@@ -1,0 +1,941 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "main";
+
+.heroSlider {
+  overflow: hidden;
+  position: relative;
+  & .image {
+    width: 100%;
+    height: 630px;
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & .owl-nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 56%;
+    & button {
+      width: 50px;
+      height: 50px;
+      background: $theme3 !important;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 50px;
+      color: #fff !important;
+      transition: all 0.3s;
+      &.owl-prev {
+        position: absolute;
+        left: 40px;
+      }
+      &.owl-next {
+        position: absolute;
+        right: 40px;
+      }
+      &:hover {
+        background-color: $theme1 !important;
+        &.owl-prev {
+          left: 30px;
+        }
+        &.owl-next {
+          right: 30px;
+        }
+      }
+    }
+  }
+  & .owl-dots {
+    text-align: center;
+    & .owl-dot {
+      background: $theme3 !important;
+      width: 18px;
+      height: 18px;
+      margin: 0 5px;
+      border-radius: 50px;
+      border: 3px solid transparent;
+      transition: all 0.3s;
+      
+      &.active {
+        border: 3px solid $theme3;
+        background: $theme1 !important;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin hero-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin hero-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin hero-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin hero-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin hero-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin hero-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin hero-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin hero-mixin-max-md() {
+  .heroSlider {
+    & .image {
+      height: unset;
+      & img {
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin hero-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin hero-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin hero-mixin-max-xl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// about us
+.aboutus {
+  & .card {
+    display: block;
+    position: relative;
+    background-color: $theme1;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    cursor: pointer;
+    &.card-2 {
+      &:before {
+        background-color: $theme1;
+      }
+      &:hover {
+        &:before {
+          background-color: $theme1;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background-color: $theme3;
+      top: -32px;
+      right: -32px;
+      height: 64px;
+      width: 64px;
+      border-radius: 50px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform 0.5s ease-out;
+    }
+    &:hover {
+      & .aboutImg {
+        border-radius: 0 50px;
+        & .imgDark {
+          display: block !important;
+        }
+        & .imgLight {
+          display: none;
+        }
+      }
+      & .aboutContent {
+        color: #fff;
+      }
+    }
+    &:hover:before {
+      transform: scale(32);
+    }
+    transition: 0.3s;
+    & .aboutImg {
+      width: 120px;
+      height: 120px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 50px 0;
+      transition: 0.3s;
+
+      & img {
+        width: 100%;
+        transition: 1s;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin aboutus-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin aboutus-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin aboutus-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin aboutus-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin aboutus-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin aboutus-mixin-max-xs() {
+  .aboutus {
+    & .card {
+      &:hover {
+        & .aboutImg {
+        }
+      }
+      & .aboutImg {
+        & img {
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin aboutus-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin aboutus-mixin-max-md() {
+  .aboutus {
+    & .card {
+      &:hover {
+        & .aboutImg {
+          border-radius: 0 24px;
+        }
+      }
+      & .aboutImg {
+        width: 70px;
+        height: 70px;
+        padding: 15px;
+        border-radius: 24px 0;
+        & img {
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin aboutus-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin aboutus-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin aboutus-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+  .aboutus {
+    & .col-8 {
+      width: 100%;
+    }
+    & .aboutContent {
+      text-align: center !important;
+      margin-top: 12px;
+    }
+  }
+}
+
+// howToPlay
+.howToPlay {
+  & .howPlay {
+    & .howPlayItem {
+      transition: all 0.3s;
+      & .tabItem {
+        & p {
+          // text-overflow: ellipsis;
+          // overflow: hidden;
+          // white-space: nowrap;
+        }
+      }
+      &:hover {
+        background-color: $theme1;
+      }
+    }
+
+    & .howPlayImg {
+      transition: 0.3s;
+      overflow: hidden;
+      cursor: pointer;
+      & img {
+        width: 100%;
+        object-fit: cover;
+        transition: 0.3s;
+      }
+      &.img-2 {
+        left: -40px;
+        width: 180px;
+        height: 240px;
+        bottom: -120px;
+        border: 10px solid #fff;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &.img-3 {
+        right: 30px;
+        width: 300px;
+        height: 200px;
+        bottom: -120px;
+        border: 10px solid #fff;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &:hover {
+        & img {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin howToPlay-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin howToPlay-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin howToPlay-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin howToPlay-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin howToPlay-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin howToPlay-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin howToPlay-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin howToPlay-mixin-max-md() {
+  .howToPlay {
+    & .howPlay {
+      & .howPlayImg {
+        & img {
+        }
+        &:hover {
+          & img {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin howToPlay-mixin-max-lg() {
+  .howToPlay {
+    & .howPlay {
+      & .howPlayItem {
+        & .tabItem {
+          & p {
+          }
+        }
+        &:hover {
+        }
+      }
+
+      & .howPlayImg {
+        & img {
+        }
+        &.img-2 {
+          left: -30px;
+          width: 160px;
+          height: 190px;
+          bottom: -160px;
+          & img {
+          }
+        }
+        &.img-3 {
+          right: 30px;
+          width: 260px;
+          height: 160px;
+          bottom: -140px;
+          & img {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin howToPlay-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin howToPlay-mixin-max-xl() {
+}
+
+@media (max-width: 360px) {
+}
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+//testimonial
+.clientTestimonial {
+  position: relative;
+  & .testimonial {
+    & .testimonialOuter {
+      transition: 0.5s;
+      & .clienDetail {
+        transition: 0.5s;
+        & .clientimg {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 5px solid $theme3;
+          margin: auto;
+          transition: 0.5s;
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  & .owl-nav {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    & .owl-prev,
+    & .owl-next {
+      color: #aaaaaa !important;
+      position: absolute;
+      transition: 0.3s;
+      &:hover {
+        color: #ffffff !important;
+        transition: 0.3s;
+        &.owl-prev {
+          left: 15px !important;
+          transition: 0.3s;
+        }
+        &.owl-next {
+          transition: 0.3s;
+          right: 15px !important;
+          transition: 0.3s;
+        }
+      }
+    }
+    & .owl-prev {
+      left: 20px;
+    }
+    & .owl-next {
+      right: 20px;
+    }
+  }
+  // & .owl-dots{
+  //   width: 100%;
+  //   text-align: center;
+  //   & .owl-dot{
+  //     width: 8px;
+  //     height: 8px;
+  //     background-color: $theme3;
+  //     border-radius: 50px;
+  //     transition:.3s;
+  //     margin: 0 4px;
+  //     &.active{
+  //       background-color: $theme1;
+  //       transition: .3s;
+  //       width: 20px;
+  //     }
+  //   }
+  // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin clientTestimonial-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin clientTestimonial-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin clientTestimonial-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin clientTestimonial-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin clientTestimonial-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin clientTestimonial-mixin-max-xs() {
+  .clientTestimonial {
+    & .testimonilaSlider {
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          
+          & .clienDetail {
+            & .clientimg {
+              width: 50px;
+              height: 50px;
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & .quote {
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+            & img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin clientTestimonial-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin clientTestimonial-mixin-max-md() {
+  .clientTestimonial {
+    & .testimonilaSlider {
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              width: 60px;
+              height: 60px;
+              border: 2px solid $theme1;
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+          }
+        }
+      }
+    }
+    & .owl-nav {
+      bottom: 20px;
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin clientTestimonial-mixin-max-lg() {
+  .clientTestimonial {
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin clientTestimonial-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin clientTestimonial-mixin-max-xl() {
+}
+
+@media (max-width: 420px) {
+  .clientTestimonial {
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+        & .testimonialBody {
+          & p {
+            padding: 30px !important;
+            & i {
+            }
+          }
+          & .quote {
+            left: 10px !important;
+            top: 10px !important;
+            & i {
+            }
+          }
+          & .quote1 {
+            & i {
+            }
+          }
+        }
+      }
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & p {
+              padding: 30px !important;
+              & i {
+              }
+            }
+            & .quote {
+              left: 10px !important;
+              top: 10px !important;
+              & i {
+              }
+            }
+            & .quote1 {
+              right: 10px !important;
+              bottom: 10px !important;
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+            & img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+//faq
+
+.faq {
+  // padding-top: 80px !important;
+  background-color: #e8f4f9;
+  .accordion-button {
+    &::after {
+      opacity: 0;
+      display: none;
+    }
+    &:not(.collapsed) {
+      &::after {
+        opacity: 0;
+        display: none;
+      }
+      & span {
+        &::after {
+        }
+        &::before {
+          transform: rotate(90deg);
+          transition: 0.3s;
+        }
+      }
+    }
+    & span {
+      margin-left: auto;
+      text-align: center;
+      &::after {
+        content: "";
+        width: 15px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        transform: translate(0px, -9px);
+      }
+      &::before {
+        content: "";
+        width: 3px;
+        height: 15px;
+        background-color: #fff;
+        display: block;
+        margin: 0 auto;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin faq-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin faq-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin faq-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin faq-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin faq-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin faq-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin faq-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin faq-mixin-max-md() {
+  .faq {
+    padding-top: 50px !important;
+    .accordion-button {
+      &::after {
+      }
+      &:not(.collapsed) {
+        &::after {
+        }
+        & span {
+          &::after {
+          }
+          &::before {
+          }
+        }
+      }
+      & span {
+        &::after {
+        }
+        &::before {
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin faq-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin faq-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin faq-mixin-max-xl() {
+}
+
+@media (max-width: 480px) {
+  .faq {
+    & .accordion {
+      padding: 16px !important;
+      & .accordion-button {
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+        &::after {
+        }
+        &:not(.collapsed) {
+          &::after {
+            opacity: 0;
+            display: none;
+          }
+          & span {
+            &::after {
+            }
+            &::before {
+            }
+          }
+        }
+        & span {
+          &::after {
+            width: 10px;
+            height: 2px;
+            transform: translate(0px, -6px);
+          }
+          &::before {
+            width: 2px;
+            height: 10px;
+          }
+        }
+      }
+      & .accordion-body {
+        padding: 10px 12px !important;
+      }
+    }
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  @include hero-mixin-min-sm();
+  @include aboutus-mixin-min-sm();
+  @include howToPlay-mixin-min-sm();
+  @include clientTestimonial-mixin-min-sm();
+  @include faq-mixin-min-sm();
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  @include hero-mixin-min-md();
+  @include aboutus-mixin-min-md();
+  @include howToPlay-mixin-min-md();
+  @include clientTestimonial-mixin-min-md();
+  @include faq-mixin-min-md();
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  @include hero-mixin-min-lg();
+  @include aboutus-mixin-min-lg();
+  @include howToPlay-mixin-min-lg();
+  @include clientTestimonial-mixin-min-lg();
+  @include faq-mixin-min-lg();
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  @include hero-mixin-min-xl();
+  @include aboutus-mixin-min-xl();
+  @include howToPlay-mixin-min-xl();
+  @include clientTestimonial-mixin-min-xl();
+  @include faq-mixin-min-xl();
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  @include hero-mixin-min-xxl();
+  @include aboutus-mixin-min-xxl();
+  @include howToPlay-mixin-min-xxl();
+  @include clientTestimonial-mixin-min-xxl();
+  @include faq-mixin-min-xxl();
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+  @include hero-mixin-max-xl();
+  @include aboutus-mixin-max-xl();
+  @include howToPlay-mixin-max-xl();
+  @include clientTestimonial-mixin-max-xl();
+  @include faq-mixin-max-xl();
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  @include hero-mixin-max-lg();
+  @include aboutus-mixin-max-lg();
+  @include howToPlay-mixin-max-lg();
+  @include clientTestimonial-mixin-max-lg();
+  @include faq-mixin-max-lg();
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  @include hero-mixin-max-md();
+  @include aboutus-mixin-max-md();
+  @include howToPlay-mixin-max-md();
+  @include clientTestimonial-mixin-max-md();
+  @include faq-mixin-max-md();
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  @include hero-mixin-max-sm();
+  @include aboutus-mixin-max-sm();
+  @include howToPlay-mixin-max-sm();
+  @include clientTestimonial-mixin-max-sm();
+  @include faq-mixin-max-sm();
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  @include hero-mixin-max-xs();
+  @include aboutus-mixin-max-xs();
+  @include howToPlay-mixin-max-xs();
+  @include clientTestimonial-mixin-max-xs();
+  @include faq-mixin-max-xs();
+}
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width

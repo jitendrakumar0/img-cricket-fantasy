@@ -1,0 +1,135 @@
+.header {
+    // background: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+
+    & .navbar {
+        padding: 16px;
+        background-image: none;
+        transition: 0.3s;
+        & .navbar-brand {
+            width: 160px;
+            transition: 0.3s;
+            & img {
+                width: 100%;
+            }
+        }
+        & .navbar-nav {
+            & .nav-link {
+            }
+        }
+        & .mobileMenu{
+            & a.navbar-toggler{
+                &:hover{
+                    & span{
+                        & span{
+                            transition: width .3s;
+                            &:nth-child(1) {
+                                width: 18px !important;
+                            }
+                            &:nth-child(2) {
+                                width: 24px !important;
+                            }
+                            &:nth-child(3) {
+                                width: 18px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.fixed {
+        width: 100%;
+        position: fixed !important;
+        transition: 0.3s;
+
+        & .navbar {
+            padding: 8px 16px;
+            transition: 0.3s;
+            top: 0 !important;
+            & .navbar-brand {
+                width: 120px;
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin header-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin header-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin header-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin header-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin header-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin header-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin header-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin header-mixin-max-md() {
+    .header {
+        & .navbar {
+            & .navbar-brand {
+                width: 130px;
+                & img {
+                    width: 100%;
+                }
+            }
+            & .navbar-nav {
+                & .nav-link {
+                    font-size: 15px;
+                    color: #fff;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        & .fixed {
+            width: 100%;
+            position: fixed !important;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            transition: 0.3s;
+
+            & .navbar {
+                padding: 12px 0;
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin header-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin header-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin header-mixin-max-xl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap

@@ -1,0 +1,32 @@
+.header {
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+.header .navbar {
+  padding: 20px 0;
+  background-image: none;
+}
+.header .navbar .navbar-brand {
+  width: 160px;
+}
+.header .navbar .navbar-brand img {
+  width: 100%;
+}
+.header .navbar .navbar-nav .nav-link {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.header.fixed {
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+}
+.header.fixed .navbar {
+  padding: 12px 0;
+  transition: 0.3s;
+}/*# sourceMappingURL=navbar.min.css.map */

@@ -1,0 +1,205 @@
+.footer {
+    & .footerLogo {
+        width: 160px;
+    }
+    & .subscribe {
+        & .input-group {
+            & .form-control {
+                color: #fff;
+                // padding: 10px 30px !important;
+            }
+            // & button{
+            //     padding: 0px 24px;
+            // }
+        }
+    }
+    & .supportLink {
+        & ul {
+            & li {
+                letter-spacing: 1px;
+                & a {
+                    transition: 0.3s;
+                    &:hover {
+                        color: $theme1 !important;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    & .links {
+        & .link {
+            & ul {
+                & li {
+                    & a {
+                        transition: 0.3s;
+                        &:hover {
+                            margin-left: 6px;
+                            transition: 0.3s;
+                            color: $theme1 !important;
+                        }
+                    }
+                }
+            }
+        }
+        & .sociallink {
+            & ul {
+                & li {
+                    & a {
+                        transition: 0.3s;
+                    }
+                    &:nth-child(1) {
+                        & a {
+                            &:hover {
+                                background-color: #4267b2 !important;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        & a {
+                            &:hover {
+                                background-color: #1da1f2 !important;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        & a {
+                            &:hover {
+                                background: linear-gradient(
+                                    45deg,
+                                    #f09433 0%,
+                                    #e6683c 25%,
+                                    #dc2743 50%,
+                                    #cc2366 75%,
+                                    #bc1888 100%
+                                ) !important;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                    &:nth-child(4) {
+                        & a {
+                            &:hover {
+                                background-color: #0077b5 !important;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin footer-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin footer-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin footer-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin footer-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin footer-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin footer-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin footer-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin footer-mixin-max-md() {
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin footer-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin footer-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin footer-mixin-max-xl() {
+}
+
+@media (max-width: 420px) {
+    .copyright {
+        & .copyright-text {
+            display: block !important;
+            & a {
+                // display: block !important;
+                margin-top: 10px;
+                justify-content: center;
+            }
+        }
+    }
+}
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    @include footer-mixin-min-sm();
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    @include footer-mixin-min-md();
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    @include footer-mixin-min-lg();
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    @include footer-mixin-min-xl();
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    @include footer-mixin-min-xxl();
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+    @include footer-mixin-max-xl();
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+    @include footer-mixin-max-lg();
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    @include footer-mixin-max-md();
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    @include footer-mixin-max-sm();
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    @include footer-mixin-max-xs();
+}
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width
